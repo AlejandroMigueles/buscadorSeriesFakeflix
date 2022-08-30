@@ -1,7 +1,9 @@
 import { React, useState } from 'react'
+import { useFetch } from '../hooks/useFetch'
 
 const FormSearch = () => {
   const [title, setTitle] = useState('')
+  const { data } = useFetch('superman')
 
   const handleSubmit = (e) => {
     e.preventDefault()
