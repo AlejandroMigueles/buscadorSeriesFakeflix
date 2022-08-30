@@ -20,8 +20,8 @@ export const useFetch = params => {
         } else {
           setData(respuestaJson)
           setIsLoading(false)
-          console.log(isLoading)
-          console.log(error)
+          console.log('el estado es', isLoading)
+          console.log('este es el error', error)
           console.log('data:', respuestaJson)
         }
       })

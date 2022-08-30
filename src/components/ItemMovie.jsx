@@ -1,8 +1,9 @@
-import React from 'react'
-
-const ItemMovie = () => {
+const ItemMovie = ({ title, id }) => {
   return (
-    <div>ItemMovie</div>
+    <div>
+      <h4>name</h4>
+      <h4>{title}</h4>
+    </div>
   )
 }
 

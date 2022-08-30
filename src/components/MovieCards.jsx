@@ -12,10 +12,10 @@ const MovieCards = () => {
                   ? data.map(item => (
                     <ItemMovie
                       key={item.show.id}
-                      id={item.id}
-                      type={item.type}
-                      title={item.name}
-                      poster={item.image}
+                      id={item.show.id}
+                      type={item.show.type}
+                      title={item.show.name}
+                      poster={item.show.image.medium}
                     />
                   ))
                   : ''
