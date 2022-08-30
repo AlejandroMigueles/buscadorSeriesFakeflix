@@ -141,3 +141,12 @@ p.author a {
   font-weight: 700;
   color: #fff;
 }
+
+
+.contentNameMovie {
+  background-color: #000;
+  border: #000;
+  border-radius: 8px;
+  padding: 5px;
+
+}

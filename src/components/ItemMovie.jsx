@@ -1,9 +1,11 @@
-const ItemMovie = ({ title, id }) => {
+const ItemMovie = ({ title, id, poster, summary, type }) => {
   return (
-    <div>
-      <h4>name</h4>
-      <h4>{title}</h4>
-    </div>
+    <article>
+      <div className='item-movie' style={{ backgroundImage: `url(${poster})` }}>
+        <h4 className='contentNameMovie'>{title}</h4>
+        {/* {summary} */}
+      </div>
+    </article>
   )
 }
 
