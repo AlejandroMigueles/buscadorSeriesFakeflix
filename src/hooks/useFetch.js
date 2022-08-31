@@ -6,6 +6,7 @@ export const useFetch = params => {
   const [isLoading, setIsLoading] = useState(true) // Estado de carga
   const [error, setError] = useState(false) // estado de error
   const [data, setData] = useState(null) // estado de datos
+  // estado de datos capítulos
 
   // ahora creamos una subfuncion para hacer la peticion a la API
   // esta funcion además cambia el estado del loadind y el error

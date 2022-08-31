@@ -15,6 +15,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.card-body{
+  color: black !important;
+}
+
 .static-nav{
   position: fixed;
   top: 0;

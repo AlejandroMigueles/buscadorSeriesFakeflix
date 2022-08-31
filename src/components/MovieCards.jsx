@@ -15,7 +15,7 @@ const MovieCards = () => {
                       id={item.show.id}
                       type={item.show.type}
                       title={item.show.name}
-                      poster={item.show?.image?.medium}
+                      poster={item.show?.image?.original}
                       summary={item.show?.summary}
                     />
                   ))
