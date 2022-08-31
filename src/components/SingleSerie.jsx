@@ -6,10 +6,9 @@ const SingleSerie = () => {
   const { id } = useParams()
   const { data } = useFetch(`shows/${id}?embed=cast`)
 
-  //const { name, image, language, genres, summary } = data
+  // const { name, image, language, genres, summary } = data
   return (
     <>
-      <h1>Titulowpsd</h1>
       <div className='single-movie'>
         <img src={data?.image?.medium} />
         <div className='single-info'>
