@@ -12,7 +12,6 @@ function App () {
           <Route path='/shows/:id' element={<SingleSerie />} />
         </Routes>
       </BrowserRouter>
-      <h2>main component</h2>
     </div>
   )
 }

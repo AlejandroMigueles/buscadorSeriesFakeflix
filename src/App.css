@@ -5,6 +5,7 @@ body{
     background-image: url(./img/triangles.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    color: #fff;
 }
 
 #root {
@@ -85,6 +86,8 @@ body{
 
 .form-search h2 {
   font-size: 50px;
+  padding-top: 20px;
+  color: #fff;
 }
 /* single movie */
 .single-movie {

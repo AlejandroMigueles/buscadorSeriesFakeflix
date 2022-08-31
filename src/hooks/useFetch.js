@@ -18,7 +18,7 @@ export const useFetch = params => {
           setError(true)
           console.log(error)
         } else {
-          setData(respuestaJson)
+          setData(respuestaJson || respuestaJson?.data)
           setIsLoading(false)
           console.log('el estado es', isLoading)
           console.log('este es el error', error)
