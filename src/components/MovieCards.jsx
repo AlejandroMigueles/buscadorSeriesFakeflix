@@ -15,8 +15,8 @@ const MovieCards = () => {
                       id={item.show.id}
                       type={item.show.type}
                       title={item.show.name}
-                      poster={item.show.image.medium}
-                      summary={item.show.summary}
+                      poster={item.show?.image?.medium}
+                      summary={item.show?.summary}
                     />
                   ))
                   : ''
