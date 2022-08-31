@@ -1,15 +1,20 @@
 import DefaultImage from '../img/noImage.png'
+import { Link } from 'react-router-dom'
 
 const ItemMovie = ({ title, id, poster, summary, type }) => {
   const image = poster === undefined ? DefaultImage : poster
 
   return (
-    <article>
-      <div className='item-movie' style={{ backgroundImage: `url(${image})` }}>
-        <h4 className='contentNameMovie'>{title}</h4>
-        {/* {summary} */}
-      </div>
-    </article>
+    <Link to={`/series/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+      <article>
+        <div className='item-movie' style={{ backgroundImage: `url(${image})` }}>
+          <div className='info'>
+            <h4 className='contentNameMovie'>{title}</h4>
+            {/* {summary} */}
+          </div>
+        </div>
+      </article>
+    </Link>
   )
 }
 

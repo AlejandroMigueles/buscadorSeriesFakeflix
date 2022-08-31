@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const APIEndpoint = 'https://api.tvmaze.com/search/shows?q='
+const APIEndpoint = 'https://api.tvmaze.com/search/shows'
 
 export const useFetch = params => {
   const [isLoading, setIsLoading] = useState(true) // Estado de carga
