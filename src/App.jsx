@@ -9,7 +9,7 @@ function App () {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<MainPage />} />
-          <Route path='/series/:id' element={<SingleSerie />} />
+          <Route path='/shows/:id' element={<SingleSerie />} />
         </Routes>
       </BrowserRouter>
       <h2>main component</h2>

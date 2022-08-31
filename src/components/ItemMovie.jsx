@@ -5,7 +5,7 @@ const ItemMovie = ({ title, id, poster, summary, type }) => {
   const image = poster === undefined ? DefaultImage : poster
 
   return (
-    <Link to={`/series/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+    <Link to={`/shows/${id}`} style={{ color: 'inherit', textDecoration: 'inherit' }}>
       <article>
         <div className='item-movie' style={{ backgroundImage: `url(${image})` }}>
           <div className='info'>
