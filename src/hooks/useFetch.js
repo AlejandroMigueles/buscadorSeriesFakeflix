@@ -17,12 +17,10 @@ export const useFetch = params => {
       .then(respuestaJson => {
         if (respuestaJson.length === 0) {
           setError(true)
-          console.log(error)
         } else {
           setData(respuestaJson || respuestaJson?.data)
           setIsLoading(false)
-          console.log('el estado es', isLoading)
-          console.log('este es el error', error)
+
           console.log('data:', respuestaJson)
         }
       })
