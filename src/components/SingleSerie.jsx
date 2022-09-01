@@ -64,7 +64,6 @@ const SingleSerie = () => {
                 <img src={actor.character?.image?.medium == null ? actor.person?.image?.medium : actor.character?.image?.medium} alt={actor.person.name} className='card-img-top' />
                 <div className='card-body'>
                   <h5 className='card-title'>{actor?.person?.name} como {actor?.character?.name}</h5>
-                  <a href='#' className='btn btn-primary'>Go somewhere</a>
                 </div>
               </div>
             </div>
