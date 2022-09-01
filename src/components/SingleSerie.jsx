@@ -24,6 +24,7 @@ const SingleSerie = () => {
 
       <div className='accordion ' id='accordionExample'>
         {season?.map(season => (
+
           <div className='accordion-item' key={season.id}>
             <h2 className='accordion-header' id='headingOne'>
               <button className='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
