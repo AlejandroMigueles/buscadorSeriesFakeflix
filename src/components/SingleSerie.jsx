@@ -7,6 +7,7 @@ const SingleSerie = () => {
   const { id } = useParams()
   const { data: dataSeries } = useFetch(`shows/${id}?embed=cast`)
   const { data: episodeData } = useFetch(`shows/${id}/episodes`)
+  const { data: season } = useFetch(`shows/${id}/seasons`)
   const poster = dataSeries?.image?.original === undefined ? DefaultImage : dataSeries?.image?.original
 
   return (
@@ -21,53 +22,36 @@ const SingleSerie = () => {
         </div>
       </div>
 
-      <div className='accordion' id='accordionExample'>
-        <div className='accordion-item'>
-          <h2 className='accordion-header' id='headingOne'>
-            <button className='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
-              Accordion Item #1
-            </button>
-          </h2>
-          <div id='collapseOne' className='accordion-collapse collapse show' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
-            <div className='accordion-body'>
-              <div className='episodes container'>
-                {episodeData?.map(episode => (
-                  <div className='episode' key={episode.id}>
-                    <img src={episode.image?.medium == null ? DefaultImage : episode.image?.medium} />
-                    <div className='episode-info'>
-                      <h3>{episode.name}</h3>
-                      <p>{episode.summary.replace(/<[^>]+>/g, '')}</p>
+      <div className='accordion ' id='accordionExample'>
+        {season?.map(season => (
+          <div className='accordion-item' key={season.id}>
+            <h2 className='accordion-header' id='headingOne'>
+              <button className='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne'>
+                Season: {season?.number}
+              </button>
+            </h2>
+            <div id='collapseOne' className='accordion-collapse collapse show' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
+              <div className='accordion-body'>
+                <div className='episodes'>
+                  {episodeData?.map(episode => (
+                    <div className='episode' key={episode.id}>
+                      <div className='image-episode'>
+                        <img src={episode.image?.medium == null ? DefaultImage : episode.image?.medium} />
+                      </div>
+                      <div className='episode-info'>
+                        <section className='container episode sectionEpisode'>
+                          <h3>{episode.number}. {episode.name}</h3>
+                          <h5>{episode.runtime} min</h5>
+                        </section>
+                        <p>{episode.summary.replace(/<[^>]+>/g, '')}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className='accordion-item'>
-          <h2 className='accordion-header' id='headingTwo'>
-            <button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'>
-              Accordion Item #2
-            </button>
-          </h2>
-          <div id='collapseTwo' className='accordion-collapse collapse' aria-labelledby='headingTwo' data-bs-parent='#accordionExample'>
-            <div className='accordion-body'>
-              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div className='accordion-item'>
-          <h2 className='accordion-header' id='headingThree'>
-            <button className='accordion-button collapsed' type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree'>
-              Accordion Item #3
-            </button>
-          </h2>
-          <div id='collapseThree' className='accordion-collapse collapse' aria-labelledby='headingThree' data-bs-parent='#accordionExample'>
-            <div className='accordion-body'>
-              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className='row container'>
@@ -76,7 +60,7 @@ const SingleSerie = () => {
           dataSeries?._embedded.cast.map(actor => (
             <div className='container col-md-3' key={actor.person.name}>
               <div className='card' style={{ width: '18rem' }}>
-                <img src={actor.character?.image?.medium == null ? DefaultImage : actor.character?.image?.medium} alt={actor.person.name} className='card-img-top' />
+                <img src={actor.character?.image?.medium == null ? actor.person?.image?.medium : actor.character?.image?.medium} alt={actor.person.name} className='card-img-top' />
                 <div className='card-body'>
                   <h5 className='card-title'>{actor?.person?.name} como {actor?.character?.name}</h5>
                   <a href='#' className='btn btn-primary'>Go somewhere</a>

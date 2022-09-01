@@ -160,3 +160,36 @@ p.author a {
   padding: 5px;
 
 }
+
+.episode{
+  display: flex;
+  flex-direction: row!important;
+}
+
+.image-episode{
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.sectionEpisode{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+.d-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section.container.episode.sectionEpisode >h3,h5{
+  font-size: 1rem;
+}
+div.episode-info p{
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
