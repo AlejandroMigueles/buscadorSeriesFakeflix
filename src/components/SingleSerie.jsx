@@ -37,7 +37,7 @@ const SingleSerie = () => {
                   {episodeData?.map(episode => (
                     <div className='episode' key={episode.id}>
                       <div className='image-episode'>
-                        <img src={episode.image?.medium == null ? DefaultImage : episode.image?.medium} />
+                        <img src={episode.image?.medium == null ? episode.image?.original : episode.image?.medium} />
                       </div>
                       <div className='episode-info'>
                         <section className='container episode sectionEpisode'>
